@@ -1,0 +1,70 @@
+nav ul {
+    list-style-type: none;
+    background-color: #1B2A4A;
+    padding: 10px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 4px;
+    color: white;
+    background: #2C3E5D;
+    transition: background 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: #E8963C;
+}
+
+.hero {
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    background:
+        linear-gradient(#1B2A4A, #4A6FB5);
+}
+
+nav a:hover {
+    background: #F2A33C;
+}
+
+.card:hover {
+    box-shadow: 6px 6px 14px #999;
+    transition: 0.3s;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body {
+    background: #1B2A4A;
+    color: white;
+    margin: 0;
+}
+
+input,
+textarea,
+select {
+    background: linear-gradient(#1B2A4A, #4A6FB5);
+    color: rgb(0, 0, 0);
+    border: 1px solid #4A6FB5;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #000000;
+}
