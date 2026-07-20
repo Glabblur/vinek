@@ -1,3 +1,5 @@
+h1.contact { color: rgb(0, 0, 0); font-size: 30pt; }
+
 nav ul {
     list-style-type: none;
     background-color: #1B2A4A;
@@ -68,3 +70,4 @@ input::placeholder,
 textarea::placeholder {
     color: #000000;
 }
+>>>>>>> da669e5eea4046c3a82786e73c4533e5f2978e8b
