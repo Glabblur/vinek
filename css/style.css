@@ -1,5 +1,14 @@
-h1.contact { color: rgb(0, 0, 0); font-size: 30pt; font-family:Sans-serif;sans-serif; }
-p.PhonesNo { color: rgb(0, 0, 0); font-size: 15pt; font-family:Sans-serif;sans-serif; }
+h1.contact {
+    color: rgb(0, 0, 0);
+    font-size: 30pt;
+    font-family: sans-serif;
+}
+
+p.PhonesNo {
+    color: rgb(0, 0, 0);
+    font-size: 15pt;
+    font-family: sans-serif;
+}
 
 nav ul {
     list-style-type: none;
