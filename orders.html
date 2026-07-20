@@ -19,15 +19,33 @@
 
 <body>
 
-    <header style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-        <a href="index.html" class="logo">KICK<span>HOUSE</span></a>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; background-color: #0b132b; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <a href="index.html" class="logo"
+            style="font-family: sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: white;">KICK
+            HOUSE</a>
+
+
+
+
+
         <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html">Our Products</a></li>
-                <li><a href="orders.html">Order Now</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+            <ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: 15px; font-family: sans-serif;">
+                <li><a href="index.html"
+                        style="color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 16px; background-color: transparent;">Home</a>
+                </li>
+                <li><a href="products.html"
+                        style="color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 16px; background-color: transparent;">Our
+                        Products</a></li>
+                <li><a href="orders.html"
+                        style="color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 16px; background-color: transparent;">Order
+                        Now</a></li>
+                <li><a href="contact.html"
+                        style="color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 16px; background-color: transparent;">Contact
+                        Us</a></li>
+                <li><a href="about.html"
+                        style="color: white; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 16px; background-color: transparent;">About
+                        Us</a></li>
             </ul>
         </nav>
     </header>
@@ -37,89 +55,93 @@
             <h2 class="section-title">Place Your Order</h2>
             <p class="section-sub">Fill out the form below to place your order.</p>
 
-            <form class="form-wrap" action="#" method="post">
+            <form class="form-wrap" action="order-success.html" method="get">
 
-                <fieldset>
-                    <legend>Customer Details</legend>
+                <div class="order-layout">
 
-                    <div class="form-group">
-                        <label for="fullname">Full name</label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Vinek Mohan" required>
-                    </div>
+                    <!-- LEFT COLUMN -->
+                    <fieldset class="col-left">
+                        <legend>Customer Details</legend>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+65 1234 5678" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Delivery Address</label>
-                        <textarea id="address" name="address" rows="3" placeholder="Street, unit, postal code"
-                            required></textarea>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Order Details</legend>
-
-                    <div class="form-group">
-                        <label for="product">Product</label>
-                        <select id="product" name="product" required>
-                            <option value="">Select a product</option>
-                            <option value="air-zoom-gt-jump">Air Zoom GT Jump - $190.00</option>
-                            <option value="air-jordan-1-low">Air Jordan 1 Low - $189.00</option>
-                            <option value="nike-gt-cut-academy-2-ep">Nike GT Cut Academy 2 EP - $136.00</option>
-                            <option value="jordan-all-game-pf">Jordan All Game PF - $129.00</option>
-                            <option value="luka-5">Luka 5 - $209.00</option>
-                            <option value="caitlin-1-ep">Caitlin 1 EP - $209.00</option>
-                            <option value="Nike Dunk Low Pandas">Nike Dunk Low Pandas - $119.00</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="size">Size</label>
-                        <select id="size" name="size" required>
-                            <option value="">Select size</option>
-                            <option value="us6">US M 6/ W 7.5</option>
-                            <option value="us7">US M 7/ W 8.5</option>
-                            <option value="us8">US M 8/ W 9.5</option>
-                            <option value="us9">US M 9/ W 10.5</option>
-                            <option value="us10">US M 10/ W 11.5</option>
-                            <option value="us11">US M 11/ W 12.5</option>
-                            <option value="us12">US M 12/ W 13.5</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Payment Method</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="payment" value="card" checked> Credit / Debit
-                                Card</label>
-                            <label><input type="radio" name="payment" value="paynow"> PayNow</label>
-                            <label><input type="radio" name="payment" value="cod"> Cash on Delivery</label>
+                        <div class="form-group">
+                            <label for="fullname">Full name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Vinek Mohan" required>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label>Add-ons</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="addon" value="giftwrap"> Gift Wrap</label>
-                            <label><input type="checkbox" name="addon" value="express"> Express Delivery</label>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                         </div>
-                    </div>
-                </fieldset>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+65 1234 5678" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <textarea id="address" name="address" rows="3" placeholder="Street, unit, postal code"
+                                required></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- RIGHT COLUMN -->
+                    <fieldset class="col-right">
+                        <legend>Order Summary</legend>
+
+                        <div class="form-group">
+                            <label for="product">Product</label>
+                            <select id="product" name="product" required>
+                                <option value="">Select a product</option>
+                                <option value="air-zoom-gt-jump">Air Zoom GT Jump - $190.00</option>
+                                <option value="air-jordan-1-low">Air Jordan 1 Low - $189.00</option>
+                                <option value="nike-gt-cut-academy-2-ep">Nike GT Cut Academy 2 EP - $136.00</option>
+                                <option value="jordan-all-game-pf">Jordan All Game PF - $129.00</option>
+                                <option value="luka-5">Luka 5 - $209.00</option>
+                                <option value="caitlin-1-ep">Caitlin 1 EP - $209.00</option>
+                                <option value="nike-dunk-low-panda">Nike Dunk Low Panda - $119.00</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="size">Size</label>
+                            <select id="size" name="size" required>
+                                <option value="">Select size</option>
+                                <option value="us6">US M 6/ W 7.5</option>
+                                <option value="us7">US M 7/ W 8.5</option>
+                                <option value="us8">US M 8/ W 9.5</option>
+                                <option value="us9">US M 9/ W 10.5</option>
+                                <option value="us10">US M 10/ W 11.5</option>
+                                <option value="us11">US M 11/ W 12.5</option>
+                                <option value="us12">US M 12/ W 13.5</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Payment Method</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="payment" value="card" checked> Credit / Debit
+                                    Card</label>
+                                <label><input type="radio" name="payment" value="paynow"> PayNow</label>
+                                <label><input type="radio" name="payment" value="cod"> Cash on Delivery</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Add-ons</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="addon" value="giftwrap"> Gift Wrap</label>
+                                <label><input type="checkbox" name="addon" value="express"> Express Delivery</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
 
                 <fieldset>
                     <legend>Feedback (Optional)</legend>
