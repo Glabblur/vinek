@@ -16,24 +16,42 @@ body {
     width: auto;
 }
 
+
+
+
 .page-banner {
-    height: 320px;
-    background-color: #111111;
-    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('basketball-court.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: flex-end;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
 }
 
 .banner-overlay {
-    padding: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 40px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
 }
 
 .banner-overlay h1 {
     color: #ffffff;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
+    margin: 0;
+}
 }
 
 .sub-nav {
