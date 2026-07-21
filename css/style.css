@@ -460,3 +460,6 @@ footer {
     color: #ffffff;
     margin-top: 60px;
 }
+
+h1.contact { color: rgb(0, 0, 0); font-size: 30pt; }
+p.PhonesNo{ color: rgb(0, 0, 0); font-size: 15pt; }
