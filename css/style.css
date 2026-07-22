@@ -166,3 +166,15 @@ input[type="checkbox"] {
     color: white;
     cursor: pointer;
 }
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111111;
+    color: #ffffff;
+    margin-top: 60px;
+}
+
+h1.contact { color: rgb(0, 0, 0); font-size: 30pt; }
+p.PhonesNo{ color: rgb(0, 0, 0); font-size: 20pt; }
