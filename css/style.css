@@ -207,17 +207,28 @@ main {
   width: auto;
 }
 
-/* ===== PAGE BANNER ===== */
+/* Shared banner design */
 .page-banner {
   height: 320px;
   background-color: #111111;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../images/basketball-court.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end;
+}
+
+/* Basketball webpage image */
+.basketball-banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../images/basketball-court.jpg");
+}
+
+/* Contact webpage image */
+.contact-banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../images/contactspage.jpg")
 }
 
 .banner-overlay {
