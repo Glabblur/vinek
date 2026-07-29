@@ -100,7 +100,7 @@ body {
   flex: 1;
 }
 
-body>section {
+body > section {
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
   animation-delay: 0.3s;
@@ -123,28 +123,28 @@ header {
   animation: fadeInUp 0.4s ease-out both;
 }
 
-main>* {
+main > * {
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
 }
 
-main>*:nth-child(1) {
+main > *:nth-child(1) {
   animation-delay: 0.15s;
 }
 
-main>*:nth-child(2) {
+main > *:nth-child(2) {
   animation-delay: 0.3s;
 }
 
-main>*:nth-child(3) {
+main > *:nth-child(3) {
   animation-delay: 0.45s;
 }
 
-main>*:nth-child(4) {
+main > *:nth-child(4) {
   animation-delay: 0.6s;
 }
 
-main>*:nth-child(5) {
+main > *:nth-child(5) {
   animation-delay: 0.75s;
 }
 
@@ -480,67 +480,40 @@ h1.contact {
   color: rgb(0, 0, 0);
   font-size: 30pt;
 }
-
 p.PhonesNo {
   color: rgb(0, 0, 0);
   font-size: 20pt;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
+img { max-width: 100%;
+height: auto; }
 /* boxes in % rather than px */
-.column {
-  width: 50%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+.column { width: 50%; }
+* { box-sizing: border-box; }
 @media (max-width: 600px) {
 
   /* stack the menu vertically */
-  nav a {
-    display: block;
-  }
-
-  /* cards become full width */
-  .card {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 18pt;
-  }
+nav a { display: block; }
+/* cards become full width */
+.card { width: 100%; }
+h1 { font-size: 18pt; }
 }
-
 @media (max-width: 600px) {
-
   /* Keep main menu on a single scrolling row */
   header nav ul {
     display: flex;
-    flex-wrap: nowrap;
-    /* Keeps everything in one straight line */
-    overflow-x: auto;
-    /* Enables horizontal scrolling */
-    white-space: nowrap;
-    /* Prevents text from breaking onto new lines */
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
+    flex-wrap: nowrap;         /* Keeps everything in one straight line */
+    overflow-x: auto;          /* Enables horizontal scrolling */
+    white-space: nowrap;       /* Prevents text from breaking onto new lines */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     padding: 8px 12px;
-    gap: 8px;
-    /* Consistent spacing between links */
+    gap: 8px;                  /* Consistent spacing between links */
   }
 
   /* Optimize link size for touch targets while keeping them compact */
   header nav ul li a {
     padding: 8px 14px;
     font-size: 13px;
-    flex-shrink: 0;
-    /* Prevents buttons from squishing */
+    flex-shrink: 0;            /* Prevents buttons from squishing */
   }
 
   /* Keep sub-navigation on a single scrolling row as well */
@@ -564,7 +537,6 @@ img {
 }
 
 @media (max-width: 600px) {
-
   /* 1. Stack Header vertically and center everything */
   header {
     background-color: #000000;
@@ -577,8 +549,7 @@ img {
 
   /* 2. Scaled Centered Logo */
   .header-logo {
-    height: 22px;
-    /* Adjusted height to keep header compact */
+    height: 22px; /* Adjusted height to keep header compact */
     width: auto;
     margin: 0 auto;
     display: block;
@@ -591,58 +562,45 @@ img {
   /* 3. Force all 5 links into 1 horizontal row */
   header nav ul {
     display: flex;
-    flex-wrap: nowrap;
-    /* Prevents dropping to a 2nd line */
-    justify-content: space-evenly;
-    /* Spreads all 5 buttons across the screen */
+    flex-wrap: nowrap;             /* Prevents dropping to a 2nd line */
+    justify-content: space-evenly; /* Spreads all 5 buttons across the screen */
     align-items: center;
     width: 100%;
     padding: 0;
     margin: 0;
-    gap: 2px;
-    /* Tiny gap between buttons */
+    gap: 2px;                      /* Tiny gap between buttons */
   }
 
   header nav ul li {
-    flex: 1;
-    /* Gives each button equal width */
+    flex: 1;                       /* Gives each button equal width */
     text-align: center;
   }
 
   /* 4. Compact button styling to fit iPhone screens */
   header nav ul li a {
     display: block;
-    padding: 6px 2px;
-    /* Minimal horizontal padding */
-    font-size: 10px;
-    /* Scaled font size so text fits */
-    letter-spacing: -0.3px;
-    /* Tightens word width slightly */
-    white-space: nowrap;
-    /* Keeps each button title on 1 line */
+    padding: 6px 2px;             /* Minimal horizontal padding */
+    font-size: 10px;               /* Scaled font size so text fits */
+    letter-spacing: -0.3px;       /* Tightens word width slightly */
+    white-space: nowrap;          /* Keeps each button title on 1 line */
     background: #2c3e5d;
     border-radius: 3px;
   }
 }
-
 @media (max-width: 600px) {
-
   /* 1. Slim Header Container */
   header {
     background-color: #000000;
-    padding: 4px 2px;
-    /* Micro vertical padding */
+    padding: 4px 2px; /* Micro vertical padding */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3px;
-    /* Minimal gap between logo & nav */
+    gap: 3px;         /* Minimal gap between logo & nav */
   }
 
   /* 2. Tiny Logo */
   .header-logo {
-    height: 12px;
-    /* Ultra-small title logo */
+    height: 12px;     /* Ultra-small title logo */
     width: auto;
     margin: 0 auto;
     display: block;
@@ -661,8 +619,7 @@ img {
     width: 100%;
     padding: 0;
     margin: 0;
-    gap: 1px;
-    /* 1px space between buttons */
+    gap: 1px;         /* 1px space between buttons */
   }
 
   header nav ul li {
@@ -673,21 +630,16 @@ img {
   /* 4. Micro Button Text */
   header nav ul li a {
     display: block;
-    padding: 3px 0;
-    /* Minimal top/bottom padding */
-    font-size: 7.5px;
-    /* Micro font size */
+    padding: 3px 0;          /* Minimal top/bottom padding */
+    font-size: 7.5px;        /* Micro font size */
     font-weight: 600;
-    letter-spacing: -0.5px;
-    /* Max letter squeezing */
+    letter-spacing: -0.5px;  /* Max letter squeezing */
     white-space: nowrap;
     background: #2c3e5d;
     border-radius: 2px;
   }
 }
-
 @media (max-width: 600px) {
-
   /* 1. Header Container */
   header {
     background-color: #000000;
@@ -713,8 +665,7 @@ img {
 
   header nav {
     width: 100%;
-    overflow: hidden !important;
-    /* Disables horizontal scroll completely */
+    overflow: hidden !important; /* Disables horizontal scroll completely */
   }
 
   /* 3. Single-Row Nav Container */
@@ -737,15 +688,11 @@ img {
   /* 4. Compact Nav Buttons */
   header nav ul li a {
     display: block;
-    padding: 4px 1px !important;
-    /* Reduced vertical padding */
-    font-size: 9.5px !important;
-    /* Slightly smaller font to avoid scroll/cut-off */
+    padding: 4px 1px !important;    /* Reduced vertical padding */
+    font-size: 9.5px !important;    /* Slightly smaller font to avoid scroll/cut-off */
     font-weight: 600 !important;
-    letter-spacing: -0.4px;
-    /* Squeezes letters slightly */
-    white-space: nowrap !important;
-    /* Prevents text breaking into two lines */
+    letter-spacing: -0.4px;         /* Squeezes letters slightly */
+    white-space: nowrap !important; /* Prevents text breaking into two lines */
     text-decoration: none;
   }
 }
