@@ -92,46 +92,42 @@
                         <legend>Order Summary</legend>
 
                         <div class="form-group">
-                            <label for="product">Product</label>
-                            <select id="product" name="product" required>
-                                <option value="">Select a product</option>
-                                <option value="air-zoom-gt-jump">Air Zoom GT Jump - $190.00</option>
-                                <option value="air-jordan-1-low">Air Jordan 1 Low - $189.00</option>
-                                <option value="nike-gt-cut-academy-2-ep">Nike GT Cut Academy 2 EP - $136.00</option>
-                                <option value="jordan-all-game-pf">Jordan All Game PF - $129.00</option>
-                                <option value="luka-5">Luka 5 - $209.00</option>
-                                <option value="caitlin-1-ep">Caitlin 1 EP - $209.00</option>
-                                <option value="nike-dunk-low-panda">Nike Dunk Low Panda - $119.00</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="size">Size</label>
-                            <select id="size" name="size" required>
-                                <option value="">Select size</option>
-                                <option value="us9">US M 9/ W 7.5</option>
-                                <option value="us10">US M 10/ W 8.5</option>
-                                <option value="us11">US M 11/ W 9.5</option>
-                                <option value="us12">US M 12/ W 10.5</option>
-                                <option value="us13">US M 13/ W 11.5</option>
-                                <option value="us14">US M 14/ W 12.5</option>
-                                <option value="us15">US M 15/ W 13.5</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="quantity">Quantity</label>
-                            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                            <label>Your Cart</label>
+                            <div id="cart-items">Loading cart...</div>
+                            <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
                         </div>
 
                         <div class="form-group">
                             <label>Payment Method</label>
                             <div class="radio-group">
-                                <label><input type="radio" name="payment" value="card" checked> Credit / Debit
+                                <label><input type="radio" name="payment" value="card" checked
+                                        onchange="toggleCardFields()"> Credit / Debit
                                     Card</label>
-                                <label><input type="radio" name="payment" value="paynow"> PayNow</label>
-                                <label><input type="radio" name="payment" value="cod"> Cash on Delivery</label>
+                                <label><input type="radio" name="payment" value="paynow" onchange="toggleCardFields()">
+                                    PayNow</label>
+                                <label><input type="radio" name="payment" value="cod" onchange="toggleCardFields()">
+                                    Cash on Delivery</label>
                             </div>
+                        </div>
+
+                        <div class="form-group" id="card-fields">
+                            <label for="cardnumber">Card Number</label>
+                            <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456"
+                                maxlength="19">
+
+                            <label for="cardexpiry">Expiry Date</label>
+                            <input type="text" id="cardexpiry" name="cardexpiry" placeholder="MM/YY" maxlength="5">
+
+                            <label for="cardcvv">CVV</label>
+                            <input type="text" id="cardcvv" name="cardcvv" placeholder="123" maxlength="4">
+                        </div>
+
+                        <div class="form-group" id="paynow-fields" style="text-align:center;">
+                            <label>Scan to Pay with PayNow</label>
+                            <img src="images/paynow-qr.jpg" alt="PayNow QR Code"
+                                style="width:180px; height:180px; object-fit:contain; margin:0 auto;">
+                            <p style="font-size:13px; color:#666;">Scan this QR code using your banking app, then click
+                                Place Order.</p>
                         </div>
 
                         <div class="form-group">
@@ -163,6 +159,49 @@
         <p>2026 KickHouse. All rights reserved.</p>
         <p>Follow us: Instagram | TikTok | Twitter</p>
     </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        window.onload = function () {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                container.innerHTML = "No items in cart.";
+            } else {
+                container.innerHTML = "";
+                cart.forEach((item, index) => {
+                    container.innerHTML += `
+                        <label style="display:flex; align-items:center; gap:10px;">
+                            <input type="checkbox" class="cart-check" data-price="${item.price}" checked>
+                            <img src="${item.image}" alt="${item.name}" style="width:50px; height:50px; object-fit:contain;">
+                            ${item.name} - $${item.price.toFixed(2)}
+                        </label><br>`;
+                });
+
+                updateTotal();
+                document.querySelectorAll('.cart-check').forEach(cb => {
+                    cb.addEventListener('change', updateTotal);
+                });
+            }
+
+            toggleCardFields();
+        };
+
+        function updateTotal() {
+            let total = 0;
+            document.querySelectorAll('.cart-check:checked').forEach(cb => {
+                total += parseFloat(cb.dataset.price);
+            });
+            document.getElementById('cart-total').textContent = total.toFixed(2);
+        }
+
+        function toggleCardFields() {
+            const selected = document.querySelector('input[name="payment"]:checked').value;
+            document.getElementById('card-fields').style.display = (selected === 'card') ? 'flex' : 'none';
+            document.getElementById('paynow-fields').style.display = (selected === 'paynow') ? 'flex' : 'none';
+        }
+    </script>
 </body>
 
 </html>
