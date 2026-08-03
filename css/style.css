@@ -1,184 +1,6 @@
-/* ===== 1. RESET & BASE STYLES ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== RESET ===== */
 html {
   scroll-behavior: smooth;
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  background: #f0f0f0;
-  color: #000000;
-}
-
-body > section {
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* ===== 2. KEYFRAMES & ANIMATIONS ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-header {
-  animation: fadeInUp 0.4s ease-out both;
-}
-
-body > section {
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-main > * {
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-}
-
-main > *:nth-child(1) {
-  animation-delay: 0.15s;
-}
-
-main > *:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-main > *:nth-child(3) {
-  animation-delay: 0.45s;
-}
-
-main > *:nth-child(4) {
-  animation-delay: 0.6s;
-}
-
-main > *:nth-child(5) {
-  animation-delay: 0.75s;
-}
-
-/* ===== 3. HEADER & NAVIGATION ===== */
-.header-logo {
-  height: 32px;
-  width: auto;
-}
-
-header nav ul {
-  list-style-type: none;
-  background-color: #000000;
-  padding: 10px;
-}
-
-header nav ul li {
-  display: inline-block;
-}
-
-header nav ul li a {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 4px;
-  color: #ffffff;
-  background: #2c3e5d;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-header nav ul li a:hover,
-header nav ul li a.active {
-  background: #e8963c;
-}
-
-/* Sub-navigation Tabs */
-.sub-nav {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 0 40px;
-}
-
-.sub-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 32px;
-}
-
-.sub-nav a {
-  display: inline-block;
-  padding: 16px 0;
-  color: #555555;
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 3px solid transparent;
-}
-
-.sub-nav a.sub-active {
-  color: #000000;
-  border-bottom: 3px solid #ff4d00;
-}
-
-/* ===== 4. HERO & PAGE BANNERS ===== */
-.hero {
-  color: #ffffff;
-  padding: 30px;
-  background: #1b2a4a;
-}
-
-/* ===== PAGE BANNER ===== */
-.page-banner {
-  height: 320px;
-  background-color: #111111;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-}
-
-/* Basketball webpage image */
-.basketball-banner {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../images/basketball-court.jpg");
-}
-
-/* Contact webpage image */
-.contact-banner {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../images/contactspage.jpg");
-}
-
-.banner-overlay {
-  padding: 40px;
-}
-
-.banner-overlay h1 {
-  color: #ffffff;
-  font-size: 48px;
-  font-weight: 700;
-}
-
-/* ===== 5. PRODUCTS GRID & CARDS ===== */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 20px 40px;
 }
 
 .product-card {
@@ -187,28 +9,28 @@ header nav ul li a.active {
   transition:
     box-shadow 0.2s,
     transform 0.2s;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  background: #ffffff;
 }
 
 .product-card:nth-child(1) {
   animation-delay: 0.1s;
 }
+
 .product-card:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .product-card:nth-child(3) {
   animation-delay: 0.3s;
 }
+
 .product-card:nth-child(4) {
   animation-delay: 0.4s;
 }
+
 .product-card:nth-child(5) {
   animation-delay: 0.5s;
 }
+
 .product-card:nth-child(6) {
   animation-delay: 0.6s;
 }
@@ -216,6 +38,21 @@ header nav ul li a.active {
 .product-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 20px 40px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: white;
 }
 
 .product-card img {
@@ -236,20 +73,87 @@ header nav ul li a.active {
   margin-bottom: 12px;
 }
 
-.content-card {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 32px;
-  border: 1px solid #eee;
-  border-radius: 8px;
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.card:hover {
-  box-shadow: 6px 6px 14px #999;
-  transition: 0.3s;
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ===== 6. CONTENT SECTIONS & TABLES ===== */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.order-section {
+  flex: 1;
+}
+
+body>section {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* ===== STAGGERED ENTRANCE ANIMATION ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+main>* {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+main>*:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+main>*:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+main>*:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+main>*:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+main>*:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+footer {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
 #mission,
 #history,
 #team {
@@ -263,7 +167,7 @@ header nav ul li a.active {
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 16px;
-  background: #ffffff;
+  background: white;
 }
 
 #history summary {
@@ -271,12 +175,173 @@ header nav ul li a.active {
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: #f0f0f0;
+  color: black;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER / LOGO ===== */
+.header-logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Shared banner design */
+.page-banner {
+  height: 320px;
+  background-color: #111111;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Basketball webpage image */
+.basketball-banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../images/basketball-court.jpg");
+}
+
+/* Contact webpage image */
+.contact-banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../images/contactspage.jpg")
+}
+
+.banner-overlay {
+  padding: 40px;
+}
+
+.banner-overlay h1 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+/* ===== SUB NAVIGATION (category tabs under banner) ===== */
+.sub-nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 0 40px;
+}
+
+.sub-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.sub-nav a {
+  display: inline-block;
+  padding: 16px 0;
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+
+.sub-nav a.sub-active {
+  color: #000000;
+  border-bottom: 3px solid #ff4d00;
+}
+
+/* ===== MAIN NAVIGATION (site-wide nav bar) ===== */
+header nav ul {
+  list-style-type: none;
+  background-color: black;
+  padding: 10px;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+header nav ul li a {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 4px;
+  color: white;
+  background: #2c3e5d;
+  transition: background 0.2s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  background: #e8963c;
+}
+
+nav a:hover {
+  background: #f2a33c;
+}
+
+/* ===== HERO ===== */
+.hero {
+  color: white;
+  padding: 30px;
+  background: #1b2a4a;
+}
+
+/* ===== CONTACT PAGE ===== */
+h1.contact {
+  color: rgb(0, 0, 0);
+  font-size: 30pt;
+  font-family: sans-serif;
+}
+
+p.PhonesNo {
+  color: rgb(0, 0, 0);
+  font-size: 15pt;
+  font-family: sans-serif;
+}
+
+/* ===== CARDS / CONTENT BLOCKS ===== */
+.content-card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 32px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.card:hover {
+  box-shadow: 6px 6px 14px #999;
+  transition: 0.3s;
+}
+
+/* ===== TABLE (product catalogue) ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
 }
 
 th,
@@ -291,9 +356,8 @@ th {
   color: #ffffff;
 }
 
-/* ===== 7. ORDER FORM SECTION ===== */
+/* ===== ORDER FORM SECTION ===== */
 .order-section {
-  flex: 1;
   padding: 60px 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -305,7 +369,7 @@ th {
 }
 
 .section-sub {
-  color: #666666;
+  color: #666;
   margin-bottom: 30px;
 }
 
@@ -316,8 +380,14 @@ th {
   align-items: start;
 }
 
+@media (max-width: 768px) {
+  .order-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 fieldset {
-  background: #ffffff;
+  background: white;
   border: none;
   border-radius: 4px;
   padding: 30px;
@@ -329,7 +399,7 @@ legend {
   font-weight: bold;
   font-size: 18px;
   padding: 0;
-  color: #000000;
+  color: black;
 }
 
 .form-group {
@@ -342,7 +412,7 @@ legend {
 label {
   font-weight: 600;
   font-size: 14px;
-  color: #000000;
+  color: black;
 }
 
 input[type="text"],
@@ -355,8 +425,8 @@ textarea {
   font-size: 15px;
   border-radius: 4px;
   width: 100%;
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
   border: 1px solid #ccc;
 }
 
@@ -385,6 +455,7 @@ input[type="checkbox"] {
   width: auto;
 }
 
+/* ===== BUTTONS ===== */
 .btn {
   padding: 18px 50px;
   font-size: 18px;
@@ -392,28 +463,12 @@ input[type="checkbox"] {
   border-radius: 4px;
   border: none;
   background: #e8963c;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
 }
 
-/* ===== 8. CONTACT PAGE TYPOGRAPHY ===== */
-h1.contact {
-  color: #000000;
-  font-size: 30pt;
-  font-family: sans-serif;
-}
-
-p.PhonesNo {
-  color: #000000;
-  font-size: 20pt;
-  font-family: sans-serif;
-}
-
-/* ===== 9. FOOTER ===== */
+/* ===== FOOTER ===== */
 footer {
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.9s;
   text-align: center;
   padding: 20px;
   background-color: #111111;
@@ -425,6 +480,7 @@ h1.contact {
   color: rgb(0, 0, 0);
   font-size: 30pt;
 }
+
 p.PhonesNo {
   color: rgb(0, 0, 0);
   font-size: 20pt;
@@ -445,11 +501,7 @@ img {
 }
 
 @media (max-width: 600px) {
-<<<<<<< HEAD
-  /* stack the menu vertically */
-=======
 
->>>>>>> e1b29d01dee3d7145ccc28858a4179b5bac3b777
   nav a {
     display: block;
   }
@@ -463,33 +515,27 @@ img {
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 600px) {
-  /* Keep main menu on a single scrolling row */
+
+
   header nav ul {
     display: flex;
     flex-wrap: nowrap;
-    /* Keeps everything in one straight line */
+    
     overflow-x: auto;
-    /* Enables horizontal scrolling */
     white-space: nowrap;
-    /* Prevents text from breaking onto new lines */
     -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
+
     padding: 8px 12px;
     gap: 8px;
-    /* Consistent spacing between links */
   }
 
-  /* Optimize link size for touch targets while keeping them compact */
   header nav ul li a {
     padding: 8px 14px;
     font-size: 13px;
     flex-shrink: 0;
-    /* Prevents buttons from squishing */
   }
 
-  /* Keep sub-navigation on a single scrolling row as well */
   .sub-nav {
     padding: 0 16px;
     overflow-x: auto;
@@ -510,11 +556,6 @@ img {
 }
 
 @media (max-width: 600px) {
-  /* 1. Stack Header vertically and center everything */
-=======
-
-@media (max-width: 600px) {
->>>>>>> e1b29d01dee3d7145ccc28858a4179b5bac3b777
   header {
     background-color: #000000;
     padding: 12px 6px;
@@ -563,10 +604,6 @@ img {
 }
 
 @media (max-width: 600px) {
-<<<<<<< HEAD
-  /* 1. Slim Header Container */
-=======
->>>>>>> e1b29d01dee3d7145ccc28858a4179b5bac3b777
   header {
     background-color: #000000;
     padding: 4px 2px;
@@ -616,10 +653,6 @@ img {
 }
 
 @media (max-width: 600px) {
-<<<<<<< HEAD
-  /* 1. Header Container */
-=======
->>>>>>> e1b29d01dee3d7145ccc28858a4179b5bac3b777
   header {
     background-color: #000000;
     padding: 6px 2px;
@@ -926,6 +959,7 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+
   /* --- 1. Categories Section --- */
   .categories-section {
     padding: 25px 10px;
